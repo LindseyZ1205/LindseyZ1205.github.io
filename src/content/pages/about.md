@@ -10,17 +10,18 @@ Science student at Northeastern University (Sep 2024 – Dec 2027).
 
 **Amazon Web Services** — Software Development Engineer Intern, Summer 2026,
 New York. I worked on AWS Quick, Amazon's agentic AI companion for research and
-business automation, and owned the sharing feature for Workstream end to end:
-shipping it across web and desktop codebases that had historically diverged.
+business automation, and owned a sharing feature end to end — design through
+launch, across web and desktop codebases that had historically diverged.
 
-The interesting constraint was that a shared dashboard has to stay exactly what
-the sender saw. I designed the share path as a URL-shortener pattern — short
-codes keying HTML snapshots in S3, served through CloudFront with Origin Access
-Control, bucket fully private — and froze each dashboard as an immutable
-point-in-time snapshot rather than a live view, so later agent activity could
-never leak into what a recipient sees. Hardening the export for public serving
-meant stripping scripts and event handlers to render the files inert, escaping
-user input, and enforcing size caps on both ends.
+It was a good problem to get handed as an intern, because most of the work
+wasn't the feature itself. It was deciding what a recipient should be allowed to
+see and when, designing the access-control model around that, and hardening the
+whole path for serving user-generated content to the public. I also had to
+choose, early and under time pressure, which parts to build and which to reuse —
+and the reuse decision is what made it ship inside the internship.
+
+I'm happy to walk through the architecture in an interview; I'd rather not post
+the details of an internal system on the open web.
 
 **EasyScaleCloud** — Software Engineer Intern, Summer 2025. Built a four-layer
 medallion data lake on S3 consolidating five source systems, with Python/Polars
