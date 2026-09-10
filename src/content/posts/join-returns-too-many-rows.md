@@ -5,7 +5,6 @@ pubDatetime: 2026-09-09T11:00:00Z
 tags:
   - sql
   - mysql
-  - databases
   - joins
 draft: false
 ---

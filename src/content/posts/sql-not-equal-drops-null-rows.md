@@ -5,7 +5,6 @@ pubDatetime: 2026-09-10T14:00:00Z
 tags:
   - sql
   - mysql
-  - databases
   - null-handling
 draft: false
 ---

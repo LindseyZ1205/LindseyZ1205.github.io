@@ -6,7 +6,6 @@ featured: true
 tags:
   - sql
   - mysql
-  - databases
   - transactions
 draft: false
 ---

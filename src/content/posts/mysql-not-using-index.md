@@ -5,8 +5,7 @@ pubDatetime: 2026-09-11T14:00:00Z
 tags:
   - sql
   - mysql
-  - databases
-  - performance
+  - indexing
 draft: false
 ---
 
