@@ -3,6 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Daily rebuild so posts with a future pubDatetime go live on schedule.
+  # A static site does not republish itself; something has to trigger a build.
+  # 14:00 UTC is 10:00 America/New_York while EDT is in effect.
+  schedule:
+    - cron: "0 14 * * *"
   workflow_dispatch:
 
 permissions:

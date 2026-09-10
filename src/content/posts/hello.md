@@ -4,7 +4,7 @@ description: "Why I'm writing things down in public, and what will end up here."
 pubDatetime: 2026-09-09T12:00:00Z
 tags:
   - meta
-featured: true
+featured: false
 ---
 
 I've been keeping notes in scratch files for a couple of years now. They work
