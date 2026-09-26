@@ -5,9 +5,18 @@ on:
     branches: [main]
   # Daily rebuild so posts with a future pubDatetime go live on schedule.
   # A static site does not republish itself; something has to trigger a build.
-  # 14:00 UTC is 10:00 America/New_York while EDT is in effect.
+  #
+  # 13:13 UTC is 09:13 America/New_York under EDT, and 08:13 under EST, so this
+  # drifts an hour earlier after the November changeover. Bump to "13 14 * * *"
+  # then if the morning slot matters.
+  #
+  # The odd minute is deliberate. GitHub queues scheduled workflows and the top
+  # of the hour is the most congested slot; "0 14 * * *" was consistently
+  # landing four hours late. There is still no timing guarantee, so give posts
+  # a pubDatetime at or before this time rather than exactly on it, and use the
+  # workflow_dispatch trigger below to publish something immediately.
   schedule:
-    - cron: "0 14 * * *"
+    - cron: "13 13 * * *"
   workflow_dispatch:
 
 permissions:
